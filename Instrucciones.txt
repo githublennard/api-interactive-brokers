@@ -1,2 +1,4 @@
 
-1) Traerme las cotizaciones a traves de la API de InteractiveBrokers
+1) Traerme las cotizaciones a traves de la API de InteractiveBrokers.
+
+2) La version de la API que tiene ejemplo en Python es la 979.01
