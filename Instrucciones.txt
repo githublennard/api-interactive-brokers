@@ -1,4 +1,21 @@
+PRIMERA FASE
 
-1) Traerme las cotizaciones a traves de la API de InteractiveBrokers.
+1) Traerme las cotizaciones(Precios de Acciones) a traves de la API de InteractiveBrokers.
 
-2) La version de la API que tiene ejemplo en Python es la 979.01
+2) Comandos para la API que debe de leer: add , rmv , list, downloads
+  
+3) Archivos que debo de generar: descargas.txt / historicos.txt /
+
+4) El fichero historico no debe tener data repetida. El fichero descargas debe ser por empresa o todas las empresas que cotizen en el mercado.
+
+
+SEGUNDA FASE
+
+5) Tener un fichero con el historial de operaciones para luego a traves de Machine Learning ejecutar las operaciones.
+
+
+
+
+-----------------------------------------------------------------
+
+*** La version de la API que tiene ejemplo en Python es la 979.01
