@@ -1,12 +1,18 @@
 PRIMERA FASE
 
-1) Traerme las cotizaciones(Precios de Acciones) a traves de la API de InteractiveBrokers.
+1) 
+Traerme las cotizaciones(Precios de Acciones) a traves de la API de InteractiveBrokers.
+Al momento de traerme las cotizaciones, tienen que ir a un fichero.txt por empresa.
+Tiene que ser un programita en Python.
 
-2) Comandos para la API que debe de leer: add , rmv , list, downloads
+2)
+Comandos para la API que debe de leer: add , rmv , list, downloads
   
-3) Archivos que debo de generar: descargas.txt / historicos.txt /
+3)
+Archivos que debo de generar: descargas.txt / historicos.txt /
 
-4) El fichero historico no debe tener data repetida. El fichero descargas debe ser por empresa o todas las empresas que cotizen en el mercado.
+4)
+El fichero historico no debe tener data repetida. El fichero descargas debe ser por empresa o todas las empresas que cotizen en el mercado.
 
 
 SEGUNDA FASE
