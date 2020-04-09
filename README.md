@@ -14,4 +14,4 @@ This repository will be for documentation about API Interactive Brokers
 
 ### Note
 Sincronized in:
-* /home/lennard/Zoho Docs/TFM_Elaboracion/Git_Api
+* /home/lennard/tfmProyecto
