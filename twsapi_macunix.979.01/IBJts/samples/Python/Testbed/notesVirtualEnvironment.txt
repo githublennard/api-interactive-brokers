@@ -1,0 +1,14 @@
+
+**
+No sirvio de mucho tener un environment en python
+
+https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
+
+**
+[lennard@acerAspire Testbed]$virtualenv mypython
+created virtual environment CPython3.8.2.final.0-64 in 349ms
+  creator CPython3Posix(dest=/home/lennard/tfmProyectoGit/apiIB/twsapi_macunix.979.01/IBJts/samples/Python/Testbed/mypython, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/lennard/.local/share/virtualenv/seed-app-data/v1.0.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+[lennard@acerAspire Testbed]$ls -l
+

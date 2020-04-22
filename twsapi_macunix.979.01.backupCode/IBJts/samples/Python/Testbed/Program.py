@@ -1928,12 +1928,10 @@ def main():
 
     try:
         app = TestApp()
-        if args.global_cancel :
+        if args.global_cancel:
             app.globalCancelOnly = True
-            #app.globalCancelOnly = True
         # ! [connect]
-        #app.connect("127.0.0.1", args.port, clientId=0)
-        app.connect("127.0.0.1", 7497,0)
+        app.connect("127.0.0.1", args.port, clientId=0)
         # ! [connect]
         print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
                                                       app.twsConnectionTime()))
