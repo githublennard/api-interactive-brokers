@@ -31,7 +31,7 @@ def main():
     #contract.symbol = "AAPL"
     contract.symbol = "MSFT"
     contract.secType = "STK" # Stock = Accion
-    contract.exchange = "SMART"#Exchange mercado donde se hacen las transacciones
+    contract.exchange = "SMART"#Exchange: mercado donde se hacen las transacciones
     contract.currency = "USD"  #Este fue el campo que se añadio en el contrato
     contract.primaryExchange = "NASDAQ" #Exchange en este caso se califica como nativo para el tipo de contrato en caso de ambiguedad
 
