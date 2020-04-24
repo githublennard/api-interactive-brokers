@@ -13,7 +13,7 @@ class TestApp(EWrapper, EClient):
 
     def tickPrice(self, reqId , tickType, price,attrib): #EWrapper Function
         #f = open("priceAppleStock", "w+")
-        f = open("priceAppleStock", "a") #Con este append 'a' si funciona me agrega los datos uno tras otro
+        f = open("priceAmazonStock", "a") #Con este append 'a' si funciona me agrega los datos uno tras otro
         print("Tick Price. Ticket Id:",reqId,"tickType:",TickTypeEnum.to_str(tickType),"Price:",price, end='')
         #f.write(str("Tick Price. Ticket Id:",reqId,"tickType:",TickTypeEnum.to_str(tickType),"Price:",price, end=''))
         f.write(str(price))
@@ -29,11 +29,11 @@ class TestApp(EWrapper, EClient):
 
 def main():
     app = TestApp()
-    #POR LOS DATOS QUE TENGO DEBERIA TRAERME PRECIO DE LAS ACCCIONES DE APPLE
+    #POR LOS DATOS QUE TENGO DEBERIA TRAERME PRECIO DE LAS ACCCIONES DEL INSTRUMENTO DECLARADO EN EL CONTRATO
     app.connect("127.0.0.1", 7497, 0)
 
     contract = Contract()
-    contract.symbol = "AAPL"
+    contract.symbol = "AMZN"
     contract.secType = "STK"
     contract.exchange = "SMART"
     contract.currency = "USD"
@@ -48,7 +48,7 @@ def main():
     app.run()
 
 if __name__ == "__main__":
-    global f
-    f = open("priceAppleStock", "a")
+    #global f
+    #f = open("priceAppleStock", "a")
     main()
-    f.close()
+    #f.close()
