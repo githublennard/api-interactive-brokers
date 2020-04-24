@@ -48,7 +48,4 @@ def main():
     app.run()
 
 if __name__ == "__main__":
-    global f
-    f = open("priceAppleStock", "a")
     main()
-    f.close()
