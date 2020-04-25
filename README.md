@@ -14,7 +14,7 @@ This repository will be for documentation about API Interactive Brokers
 
 ### Note
 
-Location Python codes to deploy the API in GitHub:
+Location in GitHub for Python codes to deploy the API:
 * apiIB/twsapi_macunix.979.01/IBJts/samples/Python/Testbed
 
 Sincronized in:
