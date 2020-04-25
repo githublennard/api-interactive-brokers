@@ -5,7 +5,6 @@ from ibapi.ticktype import TickTypeEnum #Esto se refiere al tipo tick que querem
 #Este codigo me trae el historico del precio de compra (BID) de un instrumento financiero
 
 class TestApp(EWrapper, EClient):
-    #global f
     def __init__(self):
         EClient.__init__(self,self)
 
@@ -14,28 +13,22 @@ class TestApp(EWrapper, EClient):
 
     #def tickPrice(self, reqId , tickType, price,attrib): #EWrapper Function
     def tickPrice(self, reqId,BID, price, attrib):  # EWrapper Function
-        #f = open("priceAppleStock", "w+")
-        f = open("./marketData/priceAlibabaStock.txt", "a") #Con este append 'a' si funciona me agrega los datos uno tras otro
+        f = open("./marketData/priceAppleStock.txt", "a") #Con este append 'a' agrega los datos uno tras otro
         print("Tick Price. Ticket Id:",reqId,"tickType:",TickTypeEnum.to_str(BID),"Price:",price, end='')
         #f.write(str("Tick Price. Ticket Id:",reqId,"tickType:",TickTypeEnum.to_str(tickType),"Price:",price, end=''))
         f.write(str(price))
         f.write(" ")
-        #f.write(str(price + " "))
-        #f.write(str(price," ")) # tampoco funcion con ""
-        #f.write(str(price, end=''))
-        #f.close()
-    def tickSize(self, reqId, tickType, size):
-        print("Tick Size.Ticker Id:", reqId, "tickType:", TickTypeEnum.to_str(tickType), "Size:", size)
-    #def tickSize(self, reqId, tickType, size):           #EWrapper Function
-        #print("Tick Size.Ticker Id:",reqId,"tickType:",TickTypeEnum.to_str(tickType),"Size:", size)
-
+        
+    #def tickSize(self, reqId, tickType, size):
+    #    print("Tick Size.Ticker Id:", reqId, "tickType:", TickTypeEnum.to_str(tickType), "Size:", size)
+    
 def main():
     app = TestApp()
     #POR LOS DATOS QUE TENGO DEBERIA TRAERME PRECIO DE LAS ACCCIONES DEL INSTRUMENTO DECLARADO EN EL CONTRATO
     app.connect("127.0.0.1", 7497, 0)
 
     contract = Contract()
-    contract.symbol = "BABA"
+    contract.symbol = "AAPL"
     contract.secType = "STK"
     contract.exchange = "SMART"
     contract.currency = "USD"
@@ -51,7 +44,5 @@ def main():
     app.run()
 
 if __name__ == "__main__":
-    #global f
-    #f = open("priceAppleStock", "a")
     main()
-    #f.close()
+    

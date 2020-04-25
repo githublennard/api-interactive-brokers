@@ -13,10 +13,15 @@ class TestApp(EWrapper, EClient):
         print("Error: ",reqId,"  ",errorCode," ",errorString)
 
     def contractDetails(self, reqId, contractDetails):  #Esto es una funcion de EWrapper function, es una clase de EWrapper
-        f = open("contractMicrosoftDetails", "w+")
+        f = open("./contractDetails/contractMicrosoftDetails.txt", "w+")
         print("contractDetails:",reqId," ",contractDetails) #Esto lo que hace es imprimir la respuesta del callback que hace el EWrapper
         f.write(str(contractDetails))
         f.close()
+
+#ContractDetails (Contract summary, string marketName, double minTick, string orderTypes, string validExchanges,
+#int underConId, string longName, string contractMonth, string industry, string category, string subcategory,
+#string timeZoneId, string tradingHours, string liquidHours, string evRule, double evMultiplier, int aggGroup)
+
 
 def main():
     app = TestApp()

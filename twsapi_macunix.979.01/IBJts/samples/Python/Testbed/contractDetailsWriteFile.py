@@ -15,15 +15,12 @@ class TestApp(EWrapper, EClient):
 
     def contractDetails(self, reqId, contractDetails):  #Esto es una funcion de EWrapper function, es una clase de EWrapper
         #print("contractDetails:",reqId," ",contractDetails) #Esto lo que hace es imprimir la respuesta del callback que hace el EWrapper
-        f = open("preciosContract", "w+")
+        f = open("preciosContract", "w+") # Crea el archivo donde se escribe la data
         print("contractDetails:", reqId, "probando ",contractDetails)  # Esto lo que hace es imprimir la respuesta del callback que hace el EWrapper
-        f.write(str(contractDetails))
+        f.write(str(contractDetails)) # Escribe todo lo que  
         f.close()
-        #pprint(contractDetails,"",1)
-        # resp =  contractDetails
-        # response_json = resp.json()
-        # print(response_json)
-
+        
+        
 
 def main():
     app = TestApp()
@@ -32,7 +29,6 @@ def main():
     print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
                                                   app.twsConnectionTime()))
 
-    ##f= open("preciosAcciones", "w+")
     #Contrato Editado
     contract = Contract()
     contract.symbol = "AAPL"
@@ -50,8 +46,7 @@ def main():
 
                             #(reqId, contract)
     app.reqContractDetails(7, contract)#Esto es una funcion de EClient function, es una clase de EClient
-    ##f.write("Datos, se creo el archivo" )
-    ##f.close()
+    
     app.run()
 
 if __name__ == "__main__":

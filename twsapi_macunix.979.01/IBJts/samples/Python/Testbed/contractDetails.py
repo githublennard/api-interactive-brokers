@@ -3,6 +3,7 @@ from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 from ibapi.contract import Contract
 
+#Este codigo se conecta a TWS y a traves de la API me trae los detalles financieros del Instrumento
 
 #Esta es una subclase hereda dos superclases
 class TestApp(EWrapper, EClient):
@@ -14,7 +15,6 @@ class TestApp(EWrapper, EClient):
 
     def contractDetails(self, reqId, contractDetails):  #Esto es una funcion de EWrapper function, es una clase de EWrapper
         print("contractDetails:",reqId," ",contractDetails) #Esto lo que hace es imprimir la respuesta del callback que hace el EWrapper
-        
 
 def main():
     app = TestApp()
