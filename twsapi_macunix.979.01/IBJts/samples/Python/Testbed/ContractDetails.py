@@ -21,7 +21,7 @@ def main():
 
     app.connect("127.0.0.1", 7497, 0)
 
-    #Contrato Editado
+    #Contrato Editado --->Como aparece en el Tutorial Video
     contract = Contract()
     contract.symbol = "AAPL"
     contract.secType = "STK"
@@ -33,7 +33,7 @@ def main():
     # contract = Contract()
     # contract.symbol = "AAPL"
     # contract.secType = "STK"
-    # contract.exchange = "USD"
+    # contract.currency = "USD"
     # contract.primaryExchange = "NASDAQ"
 
                             #(reqId, contract)

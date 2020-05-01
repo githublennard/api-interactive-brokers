@@ -13,7 +13,7 @@ class TestApp(EWrapper, EClient):
 
     #def tickPrice(self, reqId , tickType, price,attrib): #EWrapper Function
     def tickPrice(self, reqId,BID, price, attrib):  # EWrapper Function
-        f = open("./marketData/priceAppleStock.txt", "a") #Con este append 'a' agrega los datos uno tras otro
+        f = open("./marketData/priceAppleStock3.txt", "a") #Con este append 'a' agrega los datos uno tras otro
         print("Tick Price. Ticket Id:",reqId,"tickType:",TickTypeEnum.to_str(BID),"Price:",price, end='')
         #f.write(str("Tick Price. Ticket Id:",reqId,"tickType:",TickTypeEnum.to_str(tickType),"Price:",price, end=''))
         f.write(str(price))
@@ -40,7 +40,7 @@ def main():
                 #221= mark price (Precio de marca)
                 #Identificador de la peticion = tickrId
                 #(tickrId, contract, genericTickList(GenericTickTypes), snapshot, regulatorySnaphsot,mkdDataOptions)
-    app.reqMktData(0,contract,"221",False,False,[])
+    app.reqMktData(2,contract,"",False,False,[])
     app.run()
 
 if __name__ == "__main__":

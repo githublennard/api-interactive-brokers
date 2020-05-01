@@ -32,7 +32,7 @@ def main():
     app.reqMarketDataType(4) # Este 4 es para delayed-frozen data
 
                 #(tickrId, contract, genericTickList(GenericTickTypes), snapshot, regulatorySnaphsot,mkdDataOptions)
-    app.reqMktData(3,contract,"",False,False,[])
+    app.reqMktData(0,contract,"",False,False,[])
     app.run()
 
 if __name__ == "__main__":

@@ -1,0 +1,86 @@
+Error: -1  2104 Market data farm connection is OK:eufarm
+Error: -1  2104 Market data farm connection is OK:cashfarm
+Error: -1  2104 Market data farm connection is OK:usfarm
+Error: -1  2106 HMDS data farm connection is OK:cashhmds
+Error: -1  2106 HMDS data farm connection is OK:ushmds
+Error: -1  2158 Sec-def data farm connection is OK:secdefnj
+Tick Price. Ticket Id:1tickType:DELAYED_BIDPrice:290.32
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:21
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.5
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:23
+Tick Price. Ticket Id:1tickType:DELAYED_LASTPrice:290.5
+Tick Size.Ticker Id:1tickType:DELAYED_LAST_SIZESize:1
+Tick Price. Ticket Id:1tickType:DELAYED_HIGHPrice:299.0
+Tick Price. Ticket Id:1tickType:DELAYED_LOWPrice:285.85
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601236
+Tick Price. Ticket Id:1tickType:DELAYED_CLOSEPrice:293.8
+Tick Price. Ticket Id:1tickType:DELAYED_OPENPrice:0.0
+Error: -1  2104 Market data farm connection is OK:usfarm.nj
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.48
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:1
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:20
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601237
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.45
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:2
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.4
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:2
+Tick Price. Ticket Id:1tickType:DELAYED_LASTPrice:290.32
+Tick Size.Ticker Id:1tickType:DELAYED_LAST_SIZESize:2
+Tick Price. Ticket Id:1tickType:DELAYED_BIDPrice:290.25
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:8
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:1
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601258
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.48
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:1
+Tick Price. Ticket Id:1tickType:DELAYED_LASTPrice:290.4
+Tick Size.Ticker Id:1tickType:DELAYED_LAST_SIZESize:1
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601261
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.45
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:2
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:3
+Tick Price. Ticket Id:1tickType:DELAYED_LASTPrice:290.25
+Tick Size.Ticker Id:1tickType:DELAYED_LAST_SIZESize:2
+Tick Size.Ticker Id:1tickType:DELAYED_LAST_SIZESize:3
+Tick Price. Ticket Id:1tickType:DELAYED_BIDPrice:290.01
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:1
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601270
+Tick Price. Ticket Id:1tickType:DELAYED_BIDPrice:290.0
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:11
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.36
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:1
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.4
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:4
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.39
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:2
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:13
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601271
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.32
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:1
+Tick Price. Ticket Id:1tickType:DELAYED_LASTPrice:290.3
+Tick Size.Ticker Id:1tickType:DELAYED_LAST_SIZESize:1
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.25
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:4
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:12
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601274
+Tick Price. Ticket Id:1tickType:DELAYED_LASTPrice:290.09
+Tick Size.Ticker Id:1tickType:DELAYED_LAST_SIZESize:1
+Tick Price. Ticket Id:1tickType:DELAYED_BIDPrice:290.05
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:10
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601275
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:5
+Tick Price. Ticket Id:1tickType:DELAYED_BIDPrice:290.06
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:1
+Tick Price. Ticket Id:1tickType:DELAYED_BIDPrice:290.05
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:10
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:1
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601277
+Tick Price. Ticket Id:1tickType:DELAYED_LASTPrice:290.05
+Tick Size.Ticker Id:1tickType:DELAYED_LAST_SIZESize:3
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:11
+Tick Price. Ticket Id:1tickType:DELAYED_BIDPrice:290.15
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:6
+Tick Price. Ticket Id:1tickType:DELAYED_ASKPrice:290.35
+Tick Size.Ticker Id:1tickType:DELAYED_ASK_SIZESize:1
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:11
+Tick Size.Ticker Id:1tickType:DELAYED_VOLUMESize:601282
+Tick Size.Ticker Id:1tickType:DELAYED_BID_SIZESize:12

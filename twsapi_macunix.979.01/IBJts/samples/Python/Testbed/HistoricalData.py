@@ -32,7 +32,7 @@ def main():
     contract.exchange = "IDEALPRO"
     contract.currency = "USD"
     
-                                    #"EndDay",Duration,Bar,typeData(BID,ASK,etc), , Bool,Attribute
+#idRequest,contract,EndDay(Se puede especificar el dia que queremos data)",Duration,Bar(size),typeData(BID,ASK,etc),0(trading hours),1(format data), Bool,Attribute
     app.reqHistoricalData(1,contract,"","1 D","1 min","BID",0,1,False,[])
          
     app.run()
