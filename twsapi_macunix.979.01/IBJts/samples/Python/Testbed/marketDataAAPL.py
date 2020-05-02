@@ -9,7 +9,7 @@ class TestApp(EWrapper, EClient):
 
     def processTickLine(self, line):
         print(line)
-        with open('AAPL.out', 'a') as f:
+        with open('AAPL2.out', 'a') as f:
             f.write(line + '\n')
 
     def error(self, reqId, errorCode, errorString):
