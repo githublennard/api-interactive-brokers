@@ -11,7 +11,14 @@ class TestApp(EWrapper, EClient):
         print("Error: ",reqId,"  ",errorCode," ",errorString)
 
     def historicalData(self,reqId,bar):
-        print("HistoricalData. ",reqId,"Date:",bar.date,"High:",bar.high,"Low:",bar.low,"Close:",bar.close,"Volume:",bar.volume,"Count", bar.barCount,"WAP:",bar.average)
+        print("HistoricalData. ",reqId,
+                "Date:",bar.date,
+                "High:",bar.high,
+                "Low:",bar.low,
+                "Close:",bar.close,
+                "Volume:",bar.volume,
+                "Count", bar.barCount,
+                "WAP:",bar.average)
                                                                     #En esta concatenacion de argumentos, el orden es segun su descripcion en la documentacion                      
     
 def main():
