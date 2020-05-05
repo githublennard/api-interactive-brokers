@@ -15,7 +15,7 @@ class TestApp(EWrapper, EClient):
     
     def processTickLine(self,line1,line2,line3,line4,line5 ):
         print(line1+line2)
-        with open('AAPLColumna.out', 'a+') as f:
+        with open('./ficheros/AAPLColumna.txt', 'a+') as f:
             f.write("%2.2f,%2.2f,%2.2f,%2.2f,%2.2f" % (line1,line2,line3,line4,line5) + '\n')
             #f.write(line + '\n')
             #f.write("%2.2f,%2.2f,%2.2f,%2.2f,%2.2f,%i\n" % (line1,line2,line3,line4,line5))

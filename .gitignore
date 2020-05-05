@@ -37,3 +37,6 @@ ehthumbs.db
 Thumbs.dbi
 .idea
 
+# Route #
+######################
+ficheros/*.txt
