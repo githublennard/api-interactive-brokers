@@ -11,7 +11,7 @@ class TestApp(EWrapper, EClient):
         print("Error: ",reqId,"  ",errorCode," ",errorString)
 
     def historicalData(self,reqId,bar):
-        f = open("./historicalData/historicalDataEUR.txt", "a")             ##En esta concatenacion de argumentos de bar, el orden es segun su descripcion en la documentacion
+        f = open("./historicalData/historicalDataEUR123.txt", "a")             ##En esta concatenacion de argumentos de bar, el orden es segun su descripcion en la documentacion
         info = print("HistoricalData. ",reqId,"Date:",bar.date,"High:",bar.high,"Low:",bar.low,"Close:",bar.close,"Volume:",bar.volume,"Count", bar.barCount,"WAP:",bar.average)
         f.write(str(bar.high)) #Donde bar.high es el precio mas alto del instrumento
         f.write(" ")                                                                                  

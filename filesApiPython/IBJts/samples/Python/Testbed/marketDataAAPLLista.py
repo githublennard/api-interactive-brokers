@@ -9,7 +9,7 @@ class TestApp(EWrapper, EClient):
 
     def processTickLine(self, line):
         print(line)
-        with open('ABBVLISTA.out', 'a') as f:
+        with open('APPLLUNES.out', 'a') as f:
             f.write(line + '\n')
 
     def error(self, reqId, errorCode, errorString):
@@ -47,7 +47,7 @@ def main():
     app.connect("127.0.0.1", 7497, 0)
 
     contract = Contract()
-    contract.symbol = "ABBV"
+    contract.symbol = "AAPL"
     contract.secType = "STK"
     contract.exchange = "SMART"
     contract.currency = "USD"
@@ -59,7 +59,7 @@ def main():
                                     #221= mark price (Precio de marca), esto es referente al genericTickList(GenericTickTypes)
                 #Identificador de la peticion = tickrId
                 #(tickrId, contract, genericTickList(GenericTickTypes), snapshot, regulatorySnaphsot,mkdDataOptions)
-    app.reqMktData(1,contract,"",False,False,[])
+    app.reqMktData(0,contract,"",False,False,[])
     app.run()
 
 if __name__ == "__main__":

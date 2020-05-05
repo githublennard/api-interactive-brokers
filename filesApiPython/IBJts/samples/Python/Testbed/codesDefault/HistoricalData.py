@@ -26,17 +26,17 @@ def main():
 
     app.connect("127.0.0.1", 7497, 0)
 
-    # contract = Contract()     #Con este tipo de contrato no funciona
-    # contract.symbol = "AAPL"  
-    # contract.secType = "STK"
-    # contract.exchange = "SMART"
-    # contract.currency = "USD"
-    # #contract.primaryExchange = "NASDAQ"
+    #contract = Contract()     #Con este tipo de contrato no funciona
+    #contract.symbol = "AAPL"
+    #contract.secType = "STK"
+    #contract.exchange = "SMART"
+    #contract.currency = "USD"
+    #contract.primaryExchange = "NASDAQ"
 
     contract = Contract()
     contract.symbol = "EUR"
     contract.secType = "CASH"
-    contract.exchange = "IDEALPRO"
+    contract.exchange = "IDEALPRO" #Este contrato no corre si estoy en la sesion de tfm2020le, pero si corre en la sesion "demo TWS"
     contract.currency = "USD"
     
 #idRequest,contract,EndDay(Se puede especificar el dia que queremos data)",Duration,Bar(size),typeData(BID,ASK,etc),0(trading hours),1(format data), Bool,Attribute
