@@ -30,7 +30,7 @@ def main():
     contract.currency = "USD"
     
 
-    app.reqHistoricalData(1,contract,"","1 D","1 min","BID",0,1,False,[])
+    app.reqHistoricalData(1,contract,"","1 D","1 min","MIDPOINT",0,1,False,[])
          
     app.run()
 
