@@ -31,14 +31,21 @@ def main():
     print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
                                                   app.twsConnectionTime()))
 
-    #Contrato Editado
     contract = Contract()
-    contract.symbol = "AAPL"
-    #contract.symbol = "MSFT"
-    contract.secType = "STK" # Stock = Accion
-    contract.exchange = "SMART"#Exchange: mercado donde se hacen las transacciones
-    contract.currency = "USD"  #Este fue el campo que se añadio en el contrato
-    contract.primaryExchange = "NASDAQ" #Exchange en este caso se califica como nativo para el tipo de contrato en caso de ambiguedad
+    contract.symbol = "EUR"
+    contract.secType = "CASH"
+    contract.exchange = "IDEALPRO"
+    contract.currency = "USD"
+    
+
+    #Contrato Editado
+    # contract = Contract()
+    # contract.symbol = "AAPL"
+    # #contract.symbol = "MSFT"
+    # contract.secType = "STK" # Stock = Accion
+    # contract.exchange = "SMART"#Exchange: mercado donde se hacen las transacciones
+    # contract.currency = "USD"  #Este fue el campo que se añadio en el contrato
+    # contract.primaryExchange = "NASDAQ" #Exchange en este caso se califica como nativo para el tipo de contrato en caso de ambiguedad
 
     #Contrato Original -->> De donde es  original ??
     # contract = Contract()

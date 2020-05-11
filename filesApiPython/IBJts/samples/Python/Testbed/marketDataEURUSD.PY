@@ -9,7 +9,7 @@ class TestApp(EWrapper, EClient):
 
     def processTickLine(self, line):
         print(line)
-        with open('./ficheros/AAPLJUEVES2.txt', 'a') as f:
+        with open('eurosUSD.txt', 'a') as f:
             f.write(line + '\n')
         print("SALIENDO DE LINE")
     def error(self, reqId, errorCode, errorString):
@@ -20,12 +20,15 @@ class TestApp(EWrapper, EClient):
     def tickPrice(self, reqId , tickType, price,attrib): #EWrapper Function
         line = "Tick Price. Ticket Id:" + str(reqId) + "tickType:" + TickTypeEnum.to_str(tickType) + "Price:" + str(price)
         print("POR AQUI PASO PRICE")
+        print(TickTypeEnum.to_str(tickType))
+        print(tickType)
         self.processTickLine(line)
         #print("Tick Price. Ticket Id:", reqId, "tickType:", TickTypeEnum.to_str(tickType), "Price:", price, end='')
         
     def tickSize(self, reqId, tickType, size):
         line = "Tick Size.Ticker Id:" + str(reqId) + "tickType:" + TickTypeEnum.to_str(tickType) + "Size:" + str(size)
         print("POR AQUI PASO SIZE")
+        print(tickType)
         self.processTickLine(line)
         #print("Tick Size.Ticker Id:", reqId, "tickType:", TickTypeEnum.to_str(tickType), "Size:", size)
     
@@ -35,11 +38,17 @@ def main():
     app.connect("127.0.0.1", 7497, 0)
 
     contract = Contract()
-    contract.symbol = "AAPL"
-    contract.secType = "STK"
-    contract.exchange = "SMART"
+    contract.symbol = "GBP"
+    contract.secType = "CASH"
+    contract.exchange = "IDEALPRO"
     contract.currency = "USD"
-    contract.primaryExchange = "NASDAQ"
+
+    # contract = Contract()
+    # contract.symbol = "AAPL"
+    # contract.secType = "STK"
+    # contract.exchange = "SMART"
+    # contract.currency = "USD"
+    # contract.primaryExchange = "NASDAQ"
 
     #Esto son metodos de la clase EClient
     app.reqMarketDataType(4) # Este 4 es para delayed-frozen data

@@ -22,7 +22,7 @@ def main():
     app.connect("127.0.0.1", 7497, 0)
 
     contract = Contract()
-    contract.symbol = "AMZN"
+    contract.symbol = "AAPL"
     contract.secType = "STK"
     contract.exchange = "SMART"
     Contract.currency = "USD"

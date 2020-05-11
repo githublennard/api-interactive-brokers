@@ -1,16 +1,25 @@
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 from ibapi.contract import Contract
-#from ibapi.ticktype import TickTypeEnum
+from ibapi.common import BarData
+
+import datetime
 
 class TestApp(EWrapper, EClient):
     def __init__(self):
         EClient.__init__(self,self)
-
+        global myDict
+            
+    def processTickLine(self, line):
+        print("GENERANDO LINEA")
+        with open('../historicos/idealpro/EUR.txt', 'a') as f:
+            f.write(line + '\n')
+        
     def error(self, reqId, errorCode, errorString):
         print("Error: ",reqId,"  ",errorCode," ",errorString)
 
     def historicalData(self,reqId,bar):
+        line = str(bar.date) +","+ str(bar.high) + "," +str(bar.low)+","+str(bar.close)+","+str(bar.volume)
         print("HistoricalData. ",reqId,
                 "Date:",bar.date,
                 "High:",bar.high,
@@ -19,7 +28,8 @@ class TestApp(EWrapper, EClient):
                 "Volume:",bar.volume,
                 "Count", bar.barCount,
                 "WAP:",bar.average)
-                                                                    #En esta concatenacion de argumentos, el orden es segun su descripcion en la documentacion                      
+        self.processTickLine(line)
+                              
     
 def main():
     app = TestApp()
@@ -27,27 +37,16 @@ def main():
     app.connect("127.0.0.1", 7497, 0)
 
     contract = Contract()
-    contract.symbol = "GBP"
+    contract.symbol = "EUR"
     contract.secType = "CASH"
     contract.exchange = "IDEALPRO" #Este contrato no corre si estoy en la sesion de tfm2020le, pero si corre en la sesion "demo TWS"
     contract.currency = "USD"
-
-    # contract = Contract()     #Con este tipo de contrato no funciona
-    # contract.symbol = "AAPL"  #No market data permissions for ISLAND STK en version DEMO
-    # contract.secType = "STK"  #No market data permissions for ISLAND STK en version tfm2020le 
-    # contract.exchange = "SMART"
-    # contract.currency = "USD"
-    # contract.primaryExchange = "NASDAQ"
-
-    # contract = Contract()
-    # contract.symbol = "EUR"
-    # contract.secType = "CASH"
-    # contract.exchange = "IDEALPRO" #Este contrato no corre si estoy en la sesion de tfm2020le, pero si corre en la sesion "demo TWS"
-    # contract.currency = "USD"
     
+
+    #yyyymmdd HH:mm:ss ttt
 #idRequest,contract,EndDay(Se puede especificar el dia que queremos data)",Duration,Bar(size),typeData(BID,ASK,etc),0(trading hours),1(format data), Bool,Attribute
-    app.reqHistoricalData(0,contract,"","1 D","1 min","MIDPOINT",0,1,False,[])
-         
+    #app.reqHistoricalData(1,contract,"20200801 23:59:59 GMT","1 D","1 min","MIDPOINT",0,1,False,[])
+    app.reqHistoricalData(1,contract,"","1 D","1 min","MIDPOINT",0,1,False,[])     
     app.run()
 
 if __name__ == "__main__":
