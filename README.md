@@ -15,7 +15,7 @@ This repository will be for documentation about API Interactive Brokers
 ### Note
 
 Location in GitHub for Python codes to deploy the API:
-* apiIB/twsapi_macunix.979.01/IBJts/samples/Python/Testbed
+* filesApiPython/IBJts/samples/Python/Testbed
 
 Important Folders 
 * Folder codesProductionTFM : Codes to get MarketPrices and  HistoricalData from API
