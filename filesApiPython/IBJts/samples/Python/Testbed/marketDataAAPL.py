@@ -9,7 +9,7 @@ class TestApp(EWrapper, EClient):
 
     def processTickLine(self, line):
         print(line)
-        with open('./ficheros/AAPLJUEVES2.txt', 'a') as f:
+        with open('./ficheros/AAPL.txt', 'a') as f:
             f.write(line + '\n')
         print("SALIENDO DE LINE")
     def error(self, reqId, errorCode, errorString):
@@ -35,7 +35,7 @@ def main():
     app.connect("127.0.0.1", 7497, 0)
 
     contract = Contract()
-    contract.symbol = "AAPL"
+    contract.symbol = "AMD"
     contract.secType = "STK"
     contract.exchange = "SMART"
     contract.currency = "USD"

@@ -24,3 +24,6 @@ Important Folders
 
 Sincronized in:
 * /home/lennard/tfmProyecto
+
+To run the code without use IDE go to(But before install setup.py):
+* filesApiPython/IBJts/source/pythonclient
