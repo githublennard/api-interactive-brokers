@@ -25,5 +25,5 @@ Important Folders
 Sincronized in:
 * /home/lennard/tfmProyecto
 
-To run the code without use IDE go to(But before install setup.py):
+To run the code without use IDE go to (But before execute "setup.py sdist" on bash):
 * filesApiPython/IBJts/source/pythonclient

@@ -1,0 +1,12 @@
+
+
+**
+To execute this code we need to be in source/pythonclient folder.
+
+This run with: ./nameCode.py -->> Si tenemos el interpretador de python3 en el codigo.
+
+
+**
+To execute this code we need to be in source/pythonclient folder.
+
+This run with: python3 nameCode.py -->> Si no tenemos el interpretador de python3 en el codigo.
