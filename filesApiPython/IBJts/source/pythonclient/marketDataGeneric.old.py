@@ -11,7 +11,6 @@ global myList
 global app
 global var1
 global var2
-global finalList
 
 class TestApp(EWrapper, EClient):
     def __init__(self):
@@ -79,7 +78,6 @@ class TestApp(EWrapper, EClient):
            
 def main():
     time.sleep(3)
-    global finalList
     global myList
     global app
     global var1
@@ -107,60 +105,49 @@ def main():
     
 def contratos():
     global myList
-    global finalList
     global var1
     global var2
-    finalList = [] # Lista Vacia
     myList = []
     print("Todos los contratos")
     with open('descargas.txt','r') as file: 
         # reading each line	 
         for line in file: 
-            for word in line.split():
+            # reading each word		 
+            #for word in line.split(",",1): #Si hago esplit de 1 me devuelve una lista de 2 elementos
+            for word in line.split(): #Con el separador de espacio por defecto me devuelve lo que necesito
+                # displaying the words		 
                 print(word)
                 myList.append(word)
             print("Termine de leer una linea del fichero")
-			#print("Lista Previa donde se elimina el EOL:")
-        print("Lista donde se elimina el EndOfLine del fichero descargas.txt:")
-        print(myList)
-        print("Uniendo los elementos en la lista")
-        print(','.join(myList))
-        s = (','.join(myList))#Juntando todo los elementos en una variable
-        print("Valor de S:")
-        print(s)
-        for elemento in s.split(','):
-            print(elemento)
-            finalList.append(elemento)
-        print("Lista Final para Contratos")
-        print(finalList)
+        print("Termine de leer todo el fichero")
         print("Asigno Posicion")	
-        var1 = finalList[0]
-        var2 = finalList[1]
-        print(finalList)
+        var1 = myList[0]
+        var2 = myList[1]
+        print(myList)
         print("Termine el bucle de for y lectura del archivo.txt / Tengo un array de contratos")
-            
+
 
 def newContrato():
     global app
     global var1
     global var2 
     global myList
-    global finalList
     print("Elimine conexion del objeto anterior de la clase TestApp")
-    finalList.remove(finalList[0])
-    finalList.remove(finalList[0])
+    myList.remove(myList[0])
+    myList.remove(myList[0])
     
-    if len(finalList) == 0:
+    if len(myList) == 0:
         print("Termine todos los contratos")
         sys.exit()
     else:
         print("Faltan contratos")
         print("Asigno posiciones")
-    var1 = finalList[0]
-    var2 = finalList[1]
-    print(finalList)
+    var1 = myList[0]
+    var2 = myList[1]
+    print(myList)
     main()
-   
+    #print("No deberia pasar por aqui si funciona el if")
+    
 contratos()
 main()
     
