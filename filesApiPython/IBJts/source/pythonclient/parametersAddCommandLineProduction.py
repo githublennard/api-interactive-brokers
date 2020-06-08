@@ -10,7 +10,30 @@ def listFichero (args):
 
 def addFichero (args):
     print("Funcion para agregar instrumentos al Fichero")
-    print(myAddList)
+    #print(myAddList)
+    print(var3)
+    print(var4)
+    global myList
+    global myAddList1
+    myList = [] # Lista Vacia
+    myAddList1 = []#Los datos guardados en esta lista se usaran para escribir en el archivo .txt
+    myAddList1.append(var3)
+    myAddList1.append(var4)
+    print(myAddList1)
+    print(myAddList1[0])
+    print(myAddList1[1])
+    with open('paraLeer1.txt', 'a+') as f:
+        f.write('\n'+"%s,%s" % ((myAddList1[0]),(myAddList1[1])))#Momento en el que escribe en el archivo.txt
+        
+    with open('paraLeer1.txt','r') as file: #Este tiene coma en el texto 
+        # reading each line	 
+        for line in file:
+            for word in line.split():	
+                #print(word)
+                myList.append(word)
+    print("List Financial Instruments Available: ['MARKET,STOCK','MARKET,STOCK','MARKET,STOCK'....] ")
+    print(myList)
+    print("Se agrego al final del array, el Instrumento Financiero")
 
 def delFichero (args):
     print("Funcion para eliminar instrumentos del Fichero")
@@ -43,7 +66,7 @@ del_parser.add_argument('FINANCIAL_INSTRUMENT', action='store', nargs=1, help='N
 
 args = parser.parse_args()
 
-print(args.scmd)
+print(args.scmd)#Si coloco entre parentesis: 'args.MARKET' ; tambien lo imprime
 
 myAddList = []
 myDelList = []
@@ -52,9 +75,18 @@ if args.scmd == "DOWNLOADS":##El atributo de args se guarda en el destino 'scmd'
 elif args.scmd == "LIST":
     listFichero(args)
 elif args.scmd == "ADD":
-    myAddList.append(args.MARKET)##Si mando a imprimir lo que esta dentro de () 
+    myAddList.append(args.MARKET)##Si mando a imprimir lo que esta dentro de () lo imprime
     myAddList.append(args.FINANCIAL_INSTRUMENT)
-    print(myAddList)
+    print(myAddList) #Es una lista y cada elemento hay que sacarlo dos veces para solo tener el string
+    #print(myAddList[0])
+    #print(myAddList[1])
+    var1 = myAddList[0]
+    var2 = myAddList[1]
+    #print(len(var1))
+    var3 = var1[0].upper()#Me pone en mayuscula 
+    var4 = var2[0].upper()#Aqui ya tengo el elemento en un string de caracteres que se llevaran a una lista nueva
+    print(var3)#var3 y var4 seran los datos que se utilizaran en la otra funcion
+    print(var4)
     addFichero(args)
 elif args.scmd == "DEL":
     myDelList.append(args.MARKET)

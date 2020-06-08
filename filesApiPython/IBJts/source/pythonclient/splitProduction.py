@@ -1,9 +1,9 @@
 # Python program to read 
 # file word by word 
 
-# import re
-# global var1
-# global var2
+#EN ESTE CODIGO VOY LEER UN ARCHIVO TXT PARA FORMAR UNA LISTA DE CONTRATOS QUE ME SIRVE PARA ASIGNAR 'MERCADO,ACCION' EN OTRA 
+#FUNCION COMO VARIABLES
+
 global myList
 myList = [] # Lista Vacia
 finalList = [] # Lista Vacia
