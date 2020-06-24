@@ -36,8 +36,8 @@ def main():
                 #(tickrId, contract, genericTickList(GenericTickTypes), snapshot, regulatorySnaphsot,mkdDataOptions)
     app.reqMktData(0,contract,"",False,False,[])
     app.run()
-    self.disconnect() #No Funciona para para el codigo
-    app.disconnect() #No Funciona para para el codigo
+    self.disconnect() #No Funciona, No para el codigo
+    app.disconnect() #No Funciona,No para el codigo
 
 if __name__ == "__main__":
     main()

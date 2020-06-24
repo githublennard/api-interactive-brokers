@@ -5,7 +5,7 @@ global myList
 myList = [] # Lista Vacia
 finalList = [] # Lista Vacia
 
-with open('paraLeer1.txt','r') as file: #Este tiene coma en el texto 
+with open('paraLeer.txt','r') as file: #Este tiene coma en el texto 
 	# reading each line	 
 	for line in file:
 		for word in line.split():	
