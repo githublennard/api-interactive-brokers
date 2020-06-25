@@ -20,9 +20,9 @@ dictOper = {}
 
 #Estas 5 variables debe ser leidas del archivo ordenes.txt
 varoOp = "BUY"
-varoVo = 100
-varoMax = 2733.70
-varcSym = "AMZN"  
+varoVo = 200
+varoMax = 360.22
+varcSym = "AAPL"  
 varcMer = "ISLAND" #Se tiene que usar ISLAND en ves de "NASDAQ" 
 
 # dictOper ['varoOp'] = varoOp ## Me dice si es BUY or SELL
