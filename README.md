@@ -27,6 +27,11 @@ This repository will be for documentation about API Interactive Brokers
 * Folder codesProduction : Codes to get MarketPrices from API | Codes to Deploy the API with parameters
 * Folder DATOS : Files ".txt" by market
 
+**Important Documents on source path** (TFM Code)
+* ordenes.txt : Ordenes que se van a ejecutar.
+* operaciones.txt : Status de cada una de las ordenes que se ejecutan.
+* descargas.txt : Datos de los contratos de los cuales se va a descargar informacion financiera.
+
 **To run the code without use IDE go to (But before execute "setup.py sdist" on bash):**
 * filesApiPython/IBJts/source/pythonclient
 
