@@ -1,0 +1,47 @@
+*************REFERENTE A LA FUNCION DE ORDERSTATUS
+
+void orderStatus 	( 	int  	orderId,
+		string  	status,         #El orden de esto varia al momento de dar respuesta TWS  
+		double  	filled,
+		double  	remaining,
+		double  	avgFillPrice,
+		int  	    permId,
+		int  	    parentId,
+		double  	lastFillPrice,
+		int  	    clientId,
+		string  	whyHeld,
+		double  	mktCapPrice 
+	) 		
+
+the current status of the order. Possible values: 
+
+PendingSubmit - indicates that you have transmitted the order, but have not yet received confirmation that it has been accepted by the order destination.
+PendingCancel - indicates that you have sent a request to cancel the order but have not yet received cancel confirmation from the order destination. At this point, your order is not confirmed canceled. It is not guaranteed that the cancellation will be successful.
+PreSubmitted - indicates that a simulated order type has been accepted by the **IB system** and that this order has yet to be elected. The order is held in the IB system until the election criteria are met. At that time the order is transmitted to the order destination as specified . 
+Submitted - indicates that your order has been accepted by the **system**. ApiCancelled - after an order has been submitted and before it has been acknowledged, an API client client can request its cancelation, producing this state. 
+Cancelled - indicates that the balance of your order has been confirmed canceled by the IB system. This could occur unexpectedly when IB or the destination has rejected your order. 
+Filled - indicates that the order has been completely filled. Market orders executions will not always trigger a Filled status. 
+Inactive - indicates that the order was received by the system but is no longer active because it was rejected or canceled.
+
+
+**************REFERENTE A LOS CONTRATOS
+
+For certain smart-routed stock contracts that have the same symbol, currency and exchange, you would also need to specify the
+primary exchange attribute to uniquely define the contract. This should be defined as the native exchange of a contract, and is
+good practice to include for all stocks:
+
+        1         contract = Contract()
+        2         contract.symbol = "MSFT"
+        3         contract.secType = "STK"
+        4         contract.currency = "USD"
+        5         contract.exchange = "SMART"
+        6         #Specify the Primary Exchange attribute to avoid contract ambiguity 
+        7         #(there is an ambiguity because there is also a MSFT contract with primary exchange = "AEB")
+        8         contract.primaryExchange = "ISLAND"
+
+For the purpose of requesting market data, the routing exchange and primary exchange can be specified in a single 'exchange' field
+if they are separated by a valid component exchange separator, for instance exchange = "SMART:ARCA". The default separators
+available are colon ":" and slash "/". Other component exchange separators can be defined using the field defined in
+ TWS Global Configuration under API -> Settings. The component exchange separator syntax in TWS versions prior to 971
+ can only be used to request market data and not to place orders.
+ 
