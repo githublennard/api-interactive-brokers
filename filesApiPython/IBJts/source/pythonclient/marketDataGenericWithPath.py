@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 from ibapi.contract import Contract
@@ -5,12 +6,13 @@ from ibapi.ticktype import TickTypeEnum
 import datetime
 import time
 import sys
+import os
 
 global myList
 global app
 global var1
 global var2
-
+global finalList
 
 class TestApp(EWrapper, EClient):
     def __init__(self):
@@ -24,8 +26,10 @@ class TestApp(EWrapper, EClient):
 
     def processTickLine(self):
         global contador
-        print(var1)
-        dirName = "./DATOS/var1/"
+        #global dirName
+        print("valor de var1: "+var1)
+        dirName = "./DATOS/"+var1
+        print("Este es la ruta: "+dirName)
         # Create target Directory if don't exist
         if not os.path.exists(dirName):
             os.mkdir(dirName)
@@ -48,9 +52,9 @@ class TestApp(EWrapper, EClient):
         contador -= 1
         print(contador)
         if contador == 0:
-            print("Termine")
+            print("Termine con un contrato de la lista")
             #self.otroContrato()
-            self.disconnect()# ESTA DEBERIA ESTAR AQUI COSA QUE REGRESA AL MAIN(), tambien se desconecto de TWS Y DEBERIA COMENZAR DESPUES DEL app.run()
+            self.disconnect()# Manda al codigo a la linea despues de app.run()
         else:
             print("Faltan lineas para terminar")   
 
@@ -84,24 +88,10 @@ class TestApp(EWrapper, EClient):
             print(TickTypeEnum.to_str(tickType), "Size:", size)
             if len(myDict) > 4:
                self.processTickLine() 
-    
-    def otroContrato(self):
-        #global app
-        print("Tratando de Implementar otro contrato")
-        #contratos()
-        # self.cancelMktData(0)
-        app.cancelMktData(0)
-        self.disconnect()
-        subtractContratos() 
-        newContrato()
-        #self.disconnect()
-        #main()
-        #self.disconnect()
-        #return
-        
            
 def main():
-    #time.sleep(3)
+    time.sleep(3)
+    global finalList
     global myList
     global app
     global var1
@@ -111,21 +101,12 @@ def main():
     print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),app.twsConnectionTime()))
     
     time.sleep(3)
-    
     contract = Contract()
     contract.symbol = var2                #variable 2
     contract.secType = "STK"
     contract.exchange = "SMART"
     contract.currency = "USD"
     contract.primaryExchange = var1     #variable 1 
-
-    # contract = Contract()
-    # contract.symbol = "AAPL"
-    # contract.secType = "STK"
-    # contract.exchange = "SMART"
-    # Contract.currency = "USD"
-    # contract.primaryExchange = "NASDAQ"
-
 
         #Esto son metodos de la clase EClient
     app.reqMarketDataType(4) # Este 4 es para delayed-frozen data
@@ -134,80 +115,64 @@ def main():
     app.reqMktData(0,contract,"",False,False,[])
     app.run()
     print("Existen mas contratos ???")
-    newContrato()##SI NO HAY MAS CONTRATOS REGRESA A LA SIGUIENTE LINEA Y SI HAY LA FUNCION LO MANDARA DIRECTO AL main()
-    ##ESTA FUNCION LUEGO DE EJECUTAR REGRESA A LA SIGUIENTE LINEA Y SI HAY UN CONTRATO PENDIENTE LA FUNCION LO MANDARA DIRECTO AL main()
+    newContrato()#Importante Evalua si existen mas contratos
     
-    #app.disconnect()##NO ENCUENTRA ESTE  OBJETO
-    #del app
-
 def contratos():
     global myList
+    global finalList
     global var1
     global var2
+    finalList = [] # Lista Vacia
     myList = []
     print("Todos los contratos")
-    with open('paraLeer.txt','r') as file: 
+    with open('descargas.txt','r') as file: 
         # reading each line	 
         for line in file: 
-            # reading each word		 
-            #for word in line.split(",",1): #Si hago esplit de 1 me devuelve una lista de 2 elementos
-            for word in line.split(): #Con el separador de espacio por defecto me devuelve lo que necesito
-                # displaying the words		 
+            for word in line.split():
                 print(word)
                 myList.append(word)
-                
-            print("Termine leer todas las lineas")
-        print("Asigno Posicion")	
-        var1 = myList[0]
-        var2 = myList[1]
+            print("Termine de leer una linea del fichero")
+			#print("Lista Previa donde se elimina el EOL:")
+        print("Lista donde se elimina el EndOfLine del fichero descargas.txt:")
         print(myList)
+        print("Uniendo los elementos en la lista")
+        print(','.join(myList))
+        s = (','.join(myList))#Juntando todo los elementos en una variable
+        print("Valor de S:")
+        print(s)
+        for elemento in s.split(','):
+            print(elemento)
+            finalList.append(elemento)
+        print("Lista Final para Contratos")
+        print(finalList)
+        print("Asigno Posicion")	
+        var1 = finalList[0]
+        var2 = finalList[1]
+        print(finalList)
         print("Termine el bucle de for y lectura del archivo.txt / Tengo un array de contratos")
-
-# def subtractContratos():
-#     global myList
-#     global var1
-#     global var2
-#     myList.remove(myList[0])
-#     myList.remove(myList[0])
-#     var1 = myList[0]
-#     var2 = myList[1]
-#     print(myList)
-#     if len(myList) == 0:
-#         print("Termine")
-#         app.disconnect()
-#         return 
-#     else:
-#         print("Faltan Contratos para terminar")   
+            
 
 def newContrato():
     global app
     global var1
     global var2 
     global myList
-    print("Se supone que elimine conexion del objeto anterior de la clase TestApp que es global")
-    myList.remove(myList[0])
-    myList.remove(myList[0])
+    global finalList
+    print("Elimine conexion del objeto anterior de la clase TestApp")
+    finalList.remove(finalList[0])
+    finalList.remove(finalList[0])
     
-    if len(myList) == 0:
+    if len(finalList) == 0:
         print("Termine todos los contratos")
-        #app1.disconnect()##ESTE ESTARIA BIEN ESO CREO
-        #exitContratos()
-        #sys.exit(1)
         sys.exit()
-        #quit()
-        #exit(0)
-        print("Llego a pasar por el returnnnn ???" )
-        return #ESTE ES EL QUE ME REGRESA A "otroContrato"##SI FUNCIONA PARA EL REGRESO A LA OTRA FUNCION
-        print("Pase por el return")
     else:
         print("Faltan contratos")
         print("Asigno posiciones")
-    var1 = myList[0]
-    var2 = myList[1]
-    print(myList)
+    var1 = finalList[0]
+    var2 = finalList[1]
+    print(finalList)
     main()
-    print("No deberia pasar por aqui si funciona el if")
-    
+   
 contratos()
 main()
     
