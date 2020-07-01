@@ -13,12 +13,13 @@ This repository will be for documentation about API Interactive Brokers
 
 
 ### Note
-**Name & Path of Framework to Deploy the API IBKR from CommandLine with python3:**
+**Name and Path Framework to Deploy the API IBKR from CommandLine with python3:**
 ```
 * PATH: /filesApiPython/IBJts/source/pythonclient/
 * NAME: frameworkApiIbkr.py 
 * To get description and how to use, please execute in command line: " ./frameworkApiIbkr.py -h "
 ```
+
 **Location in GitHub for Python codes to deploy the API:**
 * filesApiPython/IBJts/samples/Python/Testbed   --> This path is for files to run in IDE as PyCharm
 * filesApiPython/IBJts/source/pythonclient   --> This path is for files to run in bash
@@ -40,5 +41,10 @@ This repository will be for documentation about API Interactive Brokers
 **To run the code without use IDE go to: /filesApiPython/IBJts/source/pythonclient**
 * Execute "setup.py sdist" on bash
 
-**Sincronized in:**
+**Environment to deploy**
+* Has account in TWS in order to use the API
+* Has the Client API (Trader Workstation) installed on computer
+* Has the Trader Workstation running at the moment to execute the Framework
+
+**All Files about this project in:**
 * /home/lennard/tfmProyecto
