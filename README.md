@@ -45,7 +45,7 @@ This repository will be for documentation about API Interactive Brokers
 **Environment to deploy**
 * Has account in TWS in order to use the API
 * Has the Client API (Trader Workstation) installed on computer
-* Has the Trader Workstation running at the moment to execute the Framework
+* The Trader Workstation should be running at the moment to execute the Framework
 
 **All Files about this project in:**
 * /home/lennard/tfmProyecto
