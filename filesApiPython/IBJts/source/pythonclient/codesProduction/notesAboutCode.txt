@@ -1,10 +1,10 @@
-
+**
+Hay une error en la ruta path del sistema que corregido en el codigo: frameworkApiIbkr.py
 
 **
 To execute this code we need to be in source/pythonclient folder.
 
 This run with: ./nameCode.py -->> Si tenemos el interpretador de python3 en el codigo.
-
 
 **
 To execute this code we need to be in source/pythonclient folder.

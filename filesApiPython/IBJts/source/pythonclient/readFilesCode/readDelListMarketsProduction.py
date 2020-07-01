@@ -13,9 +13,9 @@ var2="ABBV"
 with open('paraLeer2.txt','r+') as file: #Este tiene coma en el texto 
 	# reading each line	 
 	for line in file:
-		for word in line.split():
+		for word in line.split():#En este caso el espacio es el salto de linea
 			print(word)
-			if word != (var1+","+var2):
+			if word != (var1+","+var2):#Este seria el "word"
 				print("Este contrato se mantiene")
 				myDelList.append(word)#Va colocando los contratos en una lista
 				#del line
