@@ -20,6 +20,12 @@ This repository will be for documentation about API Interactive Brokers
 * NAME: frameworkApiIbkr.py 
 * To get description and how to use, please execute in command line: " ./frameworkApiIbkr.py -h "
 ```
+**Environment to deploy**
+* Has account in TWS in order to use the API
+* Has the Client API (Trader Workstation) installed on computer
+* The Trader Workstation should be running at the moment to execute the Framework
+* This code was deploy on Linux environment on bash
+* You can run using an IDE or without use an IDE   
 
 **Location in GitHub for Python codes to deploy the API:**
 * filesApiPython/IBJts/samples/Python/Testbed   --> This path is for files to run in IDE as PyCharm
@@ -41,11 +47,6 @@ This repository will be for documentation about API Interactive Brokers
 
 **To run the code without use IDE go to: /filesApiPython/IBJts/source/pythonclient**
 * Execute "setup.py sdist" on bash
-
-**Environment to deploy**
-* Has account in TWS in order to use the API
-* Has the Client API (Trader Workstation) installed on computer
-* The Trader Workstation should be running at the moment to execute the Framework
 
 **All Files about this project in:**
 * /home/lennard/tfmProyecto
