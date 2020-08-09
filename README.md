@@ -1,9 +1,9 @@
+# English Version Instructions
 # apiIB
 
-This repository will be for documentation about API Interactive Brokers
+This repository will be for documentation about API Interactive Brokers in order to Develop Self-Acting Investment Framework.
 
-
-## Enlace Fotos Explicacion
+## Link Pictures Instructions:
 
 1. https://monosnap.com/file/SWsJOeyGlJYFlDzo4aii7PVcs9K6YS
 2. https://monosnap.com/file/1vmbbvgWKi2p20ajFm10aV7PqFkLiR
@@ -11,42 +11,104 @@ This repository will be for documentation about API Interactive Brokers
 4. https://monosnap.com/file/EL0Y2kctRfHRRQE2NBZhTgg6Mc7LV9
 5. https://monosnap.com/file/L6q7UWJMp90cdigiLnBcLRe8IdlqP8
 
-
-### Note
+## Description of Project:
 
 **Name and Path Framework to Deploy the API IBKR from CommandLine with python3:**
 ```
 * PATH: /filesApiPython/IBJts/source/pythonclient/
 * NAME: frameworkApiIbkr.py 
-* To get description and how to use, please execute in command line: " ./frameworkApiIbkr.py -h "
+* To get description and how to use, please execute in command line: "./frameworkApiIbkr.py -h"
 ```
-**Environment to deploy**
-* Has account in TWS in order to use the API
-* Has the Client API (Trader Workstation) installed on computer
-* The Trader Workstation should be running at the moment to execute the Framework
-* This code was deploy on Linux environment on bash
-* You can run using an IDE or without use an IDE   
+**Environment work to deploy the project**
+* Has account in TWS in order to use the API.
+* Has the Client API (Trader Workstation) installed on computer.
+* The Trader Workstation should be running at the moment to execute the Framework.
+* This code was deploy on Linux environment on bash.
+* You can run using an IDE or without use an IDE.
 
-**Location in GitHub for Python codes to deploy the API:**
+**Location on GitHub and Python codes to deploy the API:**
 * filesApiPython/IBJts/samples/Python/Testbed   --> This path is for files to run in IDE as PyCharm
-* filesApiPython/IBJts/source/pythonclient   --> This path is for files to run in bash
+* filesApiPython/IBJts/source/pythonclient   --> This path is for files to run in bash(Command Line)
 
-**Important Folders in samples path** 
-* Folder codesProductionTFM : Codes to get MarketPrices and  HistoricalData from API
-* Folder Cotizaciones: Files ".txt" by market
-* Folder Historicos: Files ".txt" by market
+**Important Folders in path: "filesApiPython/IBJts/samples/Python/Testbed"** 
+* Folder codesProductionTFM: Codes to get MarketPrices and  HistoricalData from API.
+* Folder Cotizaciones: Files ".txt" by Market.
+* Folder Historicos: Files ".txt" by Market.
 
-**Important Folders in source path** (TFM Code) 
-* Folder codesProduction : Codes to get MarketPrices from API | Codes to Deploy the API with parameters | Framework Api IBKR
-* Folder DATOS : Files ".txt" by market and Stock
+**Important Folders in path: "filesApiPython/IBJts/source/pythonclient"** (TFM Code) 
+```
+Folder codesProduction: Codes to get MarketPrices from API | Codes to Deploy the API with parameters | Framework Api IBKR
 
-**Important Documents on source path** (TFM Code)
-* ordenes.txt : Ordenes que se van a ejecutar.
-* operaciones.txt : Estatus de cada una de las ordenes que se ejecutan.
-* descargas.txt : Datos de los contratos de los cuales se va a descargar informacion financiera.
+Folder DATOS: Files ".txt" by Market and Stock.
+```
 
-**To run the code without use IDE go to: /filesApiPython/IBJts/source/pythonclient**
-* Execute "setup.py sdist" on bash
+**Important Files in path: "filesApiPython/IBJts/source/pythonclient"** (TFM Code)
+* ordenes.txt: File that has all the Market Orders in order to be execute.
+* operaciones.txt: File that has Status/Result about each Market Order that was execute.
+* descargas.txt: File that has a list all the Financial Instruments to be download in order to get MarketPrices.
+
+**To run the code without use IDE go to: "/filesApiPython/IBJts/source/pythonclient" and execute:**
+* Execute: "setup.py sdist" on bash.
+* After the executions, will be available execute all python files from command line.
 
 **All Files about this project in:**
 * /home/lennard/tfmProyecto
+```
+```
+
+# Instrucciones Version en Español
+# apiIB
+
+Este repositirio contiene toda la documentacion de la API de Interactive Brokers para el Desarrollo del Framework de Inversion Automatica.
+
+## Enlace Fotos Instrucciones:
+
+1. https://monosnap.com/file/SWsJOeyGlJYFlDzo4aii7PVcs9K6YS
+2. https://monosnap.com/file/1vmbbvgWKi2p20ajFm10aV7PqFkLiR
+3. https://monosnap.com/file/iyGSrLoyjiq0IxKC4peMzV0dioZyuo
+4. https://monosnap.com/file/EL0Y2kctRfHRRQE2NBZhTgg6Mc7LV9
+5. https://monosnap.com/file/L6q7UWJMp90cdigiLnBcLRe8IdlqP8
+
+### Descripcion del Proyecto:
+
+**Nombre y Ruta del Framework en el directorio, desde donde se puede desplegar a traves de la linea de comandos con python3:**
+```
+* Ruta: /filesApiPython/IBJts/source/pythonclient/
+* Nombre: frameworkApiIbkr.py 
+* Para obtener ayuda de como desplegar el Framework ejecutar en la linea de comandos: " ./frameworkApiIbkr.py -h "
+```
+**Entorno de Trabajo para desplegar el proyecto**
+* Tener una cuenta en TWS para poder usar la API. 
+* Instalar el cliente de la API (Trader Workstation) en el ordenador.
+* Debe estar en ejecucion el cliente de la API (Trader Workstation) al momento que se ejecuta el Framework.
+* Este proyecto se despliega en Linux desde la linea de comandos.
+* Se puede ejecutar usando un IDE o sin usar un IDE.   
+
+**Ruta de los archivos en GitHub y los codigo en Python para poder desplegar el proyecto:**
+* filesApiPython/IBJts/samples/Python/Testbed   --> Esta ruta es para ejecutar desde el IDE (PyCharm)
+* filesApiPython/IBJts/source/pythonclient   --> Esta ruta es para ejecutar desde la consola
+
+**Carpetas importantes en la ruta: "filesApiPython/IBJts/samples/Python/Testbed"** 
+* Carpeta codesProductionTFM: Codigos para obtener "MarketPrices" y "HistoricalData" desde la API.
+* Carpeta Cotizaciones: Ficheros con datos de tipo ".txt" y ordenados por mercado.
+* Carpeta Historicos: Ficheros de tipo ".txt" y ordenados por mercado.
+
+**Carpetas importantes en la ruta "filesApiPython/IBJts/source/pythonclient"** (TFM Code) 
+```
+Carpeta "codesProduction": Codigos para obtener "MarketPrices" desde la API | Codigos para desplegar la API con parametros | El Framework basado en la Api de IBKR
+
+Carpeta "DATOS": Ficheros ".txt" organizados por "Market" y "Stock".
+```
+
+**Ficheros Importantes en la ruta "filesApiPython/IBJts/source/pythonclient"** (TFM Code)
+* ordenes.txt: Fichero con la lista de las ordenes que son para ejecutar.
+* operaciones.txt: Fichero que tiene el Estatus/Resultado de cada una de las ordenes que se ejecutaron.
+* descargas.txt: Fichero con la lista de los Instrumentos Financieros a descargar para obtener los "MarketPrices".
+
+**Para ejecutar el proyecto sin usar un IDE, ir a la siguiente ruta: "/filesApiPython/IBJts/source/pythonclient" y ejecutar:**
+* Ejecutar: "setup.py sdist" en la linea comandos.
+* Despues de ejecutar la instruccion anterior, se tiene el entorno para la ejecutar los ficheros de python desde la linea de comando.
+
+**Toda la documentacion del proyecto esta en:**
+* /home/lennard/tfmProyecto
+
