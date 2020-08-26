@@ -38,11 +38,6 @@ global priceOrd
 global dictOper #Diccionario para imprimir las ordenes ejecutadas
 dictOper = {}
 
-#Variables medicion tiempo
-global startVar
-global endVar
-global resultVar
-
 #####################################AQUI COMIENZA LA CLASE DESCARGA DATOS#########################################
 class TestApp(EWrapper, EClient):
     def __init__(self):
@@ -82,7 +77,7 @@ class TestApp(EWrapper, EClient):
             print("\n")
             self.disconnect()# Manda al codigo a la linea despues de app.run()
         else:
-            print("Faltan registros en el contrato")
+            print("Faltan registro en el contrato")
 
     def error(self, reqId, errorCode, errorString):
         print("Error: ",reqId,"  ",errorCode," ",errorString)
@@ -117,7 +112,7 @@ class TestApp(EWrapper, EClient):
 
 ###############************METODO PARA INSTANCIAR LA CLASE DESCARGA DATOS************################
 def main():
-    time.sleep(2)
+    time.sleep(3)
     global finalList
     global myList
     global app
@@ -127,7 +122,7 @@ def main():
     app.connect("127.0.0.1", 7497, 0)
     print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),app.twsConnectionTime()))
 
-    time.sleep(1)
+    time.sleep(3)
     contract = Contract()
     contract.symbol = var2                #variable 2
     contract.secType = "STK"
@@ -176,18 +171,13 @@ def newContrato():
     global var2
     global myList
     global finalList
-    #global endVar
-    global startVar
     #print("Elimine conexion del objeto anterior de la clase TestApp")
     finalList.remove(finalList[0])
     finalList.remove(finalList[0])
 
     if len(finalList) == 0:
         print("DONE DOWNLOAD DATA OF FINANCIAL INSTRUMENTS")
-        print("WAS REGISTERED ON FOLDER: DATOS")
-        print("\n")
-        print("""TOTAL DOWNLOAD TIME: """)
-        print (time.perf_counter() - startVar, "Seconds")
+        print("WAS REGISTERED ON FOLDER: DATOS"  )
         sys.exit()
     else:
         #print("Faltan contratos")
@@ -292,7 +282,6 @@ def newOrders():
     global varcMer #Mercado
     global varcSym #Symbol
     global myOrderList
-    global startVar
 
     print("\n")
     print("LISTA CON ORDENES PENDIENTES A EJECUTAR: ")
@@ -303,9 +292,6 @@ def newOrders():
         print("ALL ORDERS WAS EXECUTE")
         file = open('ordenes.txt', 'w+')#Con esto luego de ejecutar las ordenes me borra el fichero ordenes.txt
         file.close()
-        print("\n")
-        print("""TOTAL ORDERS EXECUTION TIME: """)
-        print (time.perf_counter() - startVar, "Seconds")
         sys.exit()#ESTO FUNCIONA PERFECTAMENTE PARA SALIR DEL PROGRAMA
     else:
         print("FALTAN ORDENES ASIGNARE POSICIONES")
@@ -378,9 +364,7 @@ def listOpContratos():
 ####################################################DECLARACION FUNCIONES ARGPARSE#####################################################
 
 def downloadsFichero(args):
-    global startVar
     print("FUNCTION TO GET DATA OF FINANCIAL INSTRUMENTS")
-    startVar = time.perf_counter()#Data con decimales
     contratos()
     main()
 
@@ -508,12 +492,10 @@ def delFicheroOp (args):
     sys.exit()
 
 def executeOrders(args):
-    global startVar
     print("Funcion para ejecutar ordenes")
-    startVar = time.perf_counter()#Data con decimales
     readOrdenes()
     main1()
-    #sys.exit()
+    sys.exit()
 
 #########################################PARAMETROS DEL CODIGO | FUNCION ARGPARSE###########################################################
 
