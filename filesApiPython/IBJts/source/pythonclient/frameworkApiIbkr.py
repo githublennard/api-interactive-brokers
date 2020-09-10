@@ -278,7 +278,7 @@ def main1():
     app.connect("127.0.0.1", 7497, 0)
     time.sleep(3)
 
-    Timer(6, app.stop).start()#Al parecer se ejecuta el start() y el Timer como que espera 6 segundo para ejecutar el stop()
+    Timer(6, app.stop).start()#Se ejecuta el start() y el Timer como que espera 6 segundo para ejecutar el stop()
     app.run()
     print("EXISTEN MAS ORDENES ??? SINO EXISTE ORDENES A EJECUTAR LA PROXIMA FUNCION TERMINARA EL PROGRAMA")
     newOrders()##SI NO HAY MAS CONTRATOS REGRESA A LA SIGUIENTE LINEA Y SI HAY LA FUNCION LO MANDARA DIRECTO AL main1()
