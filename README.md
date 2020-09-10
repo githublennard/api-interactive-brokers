@@ -13,17 +13,19 @@ This repository will be for documentation about API Interactive Brokers in order
 
 ## Description of Project:
 
-**Name and Path Framework to Deploy the API IBKR from CommandLine with python3:**
+**Name and Path Framework to Deploy the API IBKR from CommandLine with python:**
 ```
 * PATH: /filesApiPython/IBJts/source/pythonclient/
 * NAME: frameworkApiIbkr.py 
 * To get description and how to use, please execute in command line: "./frameworkApiIbkr.py -h"
 ```
+
 **Environment work to deploy the project**
-* Has account in TWS in order to use the API.
-* Has the Client API (Trader Workstation) installed on computer.
+* Has account in Interactive Brokers in order to use the API.
+* Has the Client API (Trader Workstation / TWS) installed on computer.
 * The Trader Workstation should be running at the moment to execute the Framework.
 * This code was deploy on Linux environment on bash.
+* Has installed Python  version >= 3.1
 * You can run using an IDE or without use an IDE.
 
 **Location on GitHub and Python codes to deploy the API:**
@@ -37,7 +39,7 @@ This repository will be for documentation about API Interactive Brokers in order
 
 **Important Folders in path: "filesApiPython/IBJts/source/pythonclient"** (TFM Code) 
 ```
-Folder codesProduction: Codes to get MarketPrices from API | Codes to Deploy the API with parameters | Framework Api IBKR
+Folder codesProduction: Framework Api IBKR | Codes to get MarketPrices from API | Codes to Deploy the API with parameters
 
 Folder DATOS: Files ".txt" by Market and Stock.
 ```
@@ -71,17 +73,19 @@ Este repositirio contiene toda la documentacion de la API de Interactive Brokers
 
 ### Descripcion del Proyecto:
 
-**Nombre y Ruta del Framework en el directorio, desde donde se puede desplegar a traves de la linea de comandos con python3:**
+**Nombre y Ruta del Framework en el directorio, desde donde se puede desplegar a traves de la linea de comandos con python:**
 ```
 * Ruta: /filesApiPython/IBJts/source/pythonclient/
 * Nombre: frameworkApiIbkr.py 
 * Para obtener ayuda de como desplegar el Framework ejecutar en la linea de comandos: " ./frameworkApiIbkr.py -h "
 ```
+
 **Entorno de Trabajo para desplegar el proyecto**
-* Tener una cuenta en TWS para poder usar la API. 
-* Instalar el cliente de la API (Trader Workstation) en el ordenador.
+* Tener una cuenta en Interactive Brokers para poder usar la API. 
+* Instalar el cliente de la API (Trader Workstation / TWS) en el ordenador.
 * Debe estar en ejecucion el cliente de la API (Trader Workstation) al momento que se ejecuta el Framework.
 * Este proyecto se despliega en Linux desde la linea de comandos.
+* Tener instalada la version de Python >= a 3.1
 * Se puede ejecutar usando un IDE o sin usar un IDE.   
 
 **Ruta de los archivos en GitHub y los codigo en Python para poder desplegar el proyecto:**
@@ -95,7 +99,7 @@ Este repositirio contiene toda la documentacion de la API de Interactive Brokers
 
 **Carpetas importantes en la ruta "filesApiPython/IBJts/source/pythonclient"** (TFM Code) 
 ```
-Carpeta "codesProduction": Codigos para obtener "MarketPrices" desde la API | Codigos para desplegar la API con parametros | El Framework basado en la Api de IBKR
+Carpeta "codesProduction": Framework Api IBKR | Codigos para obtener "MarketPrices" desde la API | Codigos para desplegar la API con parametros
 
 Carpeta "DATOS": Ficheros ".txt" organizados por "Market" y "Stock".
 ```
@@ -111,4 +115,3 @@ Carpeta "DATOS": Ficheros ".txt" organizados por "Market" y "Stock".
 
 **Toda la documentacion del proyecto esta en:**
 * /home/lennard/tfmProyecto
-
