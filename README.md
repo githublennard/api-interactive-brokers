@@ -24,7 +24,7 @@ This repository will be for documentation about API Interactive Brokers in order
 * Has account in Interactive Brokers in order to use the API.
 * Has the Client API (Trader Workstation / TWS) installed on computer.
 * The Trader Workstation should be running at the moment to execute the Framework.
-* This code was deploy on Linux environment on bash.
+* This code was deploy on Linux environment on bash | On Windows environment it is similary.
 * Has installed Python  version >= 3.1
 * You can run using an IDE or without use an IDE.
 
@@ -49,7 +49,7 @@ Folder DATOS: Files ".txt" by Market and Stock.
 * operaciones.txt: File that has Status/Result about each Market Order that was execute.
 * descargas.txt: File that has a list all the Financial Instruments to be download in order to get MarketPrices.
 
-**To run the code without use IDE go to: "/filesApiPython/IBJts/source/pythonclient" and execute:**
+**To run the code (Linux environment) without use IDE go to: "/filesApiPython/IBJts/source/pythonclient" and execute:**
 * Execute: "setup.py sdist" on bash.
 * After the executions, will be available execute all python files from command line.
 
@@ -84,8 +84,8 @@ Este repositirio contiene toda la documentacion de la API de Interactive Brokers
 * Tener una cuenta en Interactive Brokers para poder usar la API. 
 * Instalar el cliente de la API (Trader Workstation / TWS) en el ordenador.
 * Debe estar en ejecucion el cliente de la API (Trader Workstation) al momento que se ejecuta el Framework.
-* Este proyecto se despliega en Linux desde la linea de comandos.
-* Tener instalada la version de Python >= a 3.1
+* Este proyecto se despliega en Linux desde la linea de comandos | En Windows el procedimiento es similar.
+* Tener instalada la version de Python >= 3.1
 * Se puede ejecutar usando un IDE o sin usar un IDE.   
 
 **Ruta de los archivos en GitHub y los codigo en Python para poder desplegar el proyecto:**
@@ -109,7 +109,7 @@ Carpeta "DATOS": Ficheros ".txt" organizados por "Market" y "Stock".
 * operaciones.txt: Fichero que tiene el Estatus/Resultado de cada una de las ordenes que se ejecutaron.
 * descargas.txt: Fichero con la lista de los Instrumentos Financieros a descargar para obtener los "MarketPrices".
 
-**Para ejecutar el proyecto sin usar un IDE, ir a la siguiente ruta: "/filesApiPython/IBJts/source/pythonclient" y ejecutar:**
+**Para ejecutar el proyecto (Linux) sin usar un IDE, ir a la siguiente ruta: "/filesApiPython/IBJts/source/pythonclient" y ejecutar:**
 * Ejecutar: "setup.py sdist" en la linea comandos.
 * Despues de ejecutar la instruccion anterior, se tiene el entorno para la ejecutar los ficheros de python desde la linea de comando.
 
