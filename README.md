@@ -2,6 +2,7 @@
 # apiIB
 
 This repository will be for documentation about API Interactive Brokers in order to Develop Self-Acting Investment Framework.
+This project refers to the final master's project at UC3M (Master in Technologies in the Financial Sector).
 
 ## Link Pictures Instructions:
 
@@ -62,6 +63,7 @@ Folder DATOS: Files ".txt" by Market and Stock.
 # apiIB
 
 Este repositirio contiene toda la documentacion de la API de Interactive Brokers para el Desarrollo del Framework de Inversion Automatica.
+Este proyecto es referente al trabajo fin de máster en la UC3M (Máster en Tecnologías del Sector Financiero).
 
 ## Enlace Fotos Instrucciones:
 
