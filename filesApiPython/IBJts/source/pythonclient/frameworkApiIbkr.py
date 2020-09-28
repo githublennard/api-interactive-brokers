@@ -44,13 +44,13 @@ global endVar
 global resultVar
 
 #####################################AQUI COMIENZA LA CLASE DESCARGA DATOS#########################################
-class TestApp(EWrapper, EClient):
+class DownloadData(EWrapper, EClient):
     def __init__(self):
         EClient.__init__(self,self)
         global myDict
         myDict ={'68':0,'72':0,'73':0,'75':0,'74':0} #Tener Diccionario con 0 por si un dato No viene.
         global contador
-        contador = 3
+        contador = 3 # API IBKR Sent data in 3 slot of time, if put 5 wait much time
 
     def processTickLine(self):
         global contador
@@ -102,7 +102,7 @@ class TestApp(EWrapper, EClient):
             myDict['73'] = price
             print(TickTypeEnum.to_str(tickType),"Price:", price)
 
-        if tickType == 75:#Este tickType solo viene una vez
+        if tickType == 75:#Este tickType no cambia ya que es el precio de cierre
             myDict['75'] = price
             print(TickTypeEnum.to_str(tickType),"Price:", price)
             if len(myDict) > 4:
@@ -123,7 +123,7 @@ def main():
     global app
     global var1
     global var2
-    app = TestApp()
+    app = DownloadData()
     app.connect("127.0.0.1", 7497, 0)
     print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),app.twsConnectionTime()))
 
@@ -178,7 +178,6 @@ def newContrato():
     global finalList
     #global endVar
     global startVar
-    #print("Elimine conexion del objeto anterior de la clase TestApp")
     finalList.remove(finalList[0])
     finalList.remove(finalList[0])
 
@@ -190,7 +189,6 @@ def newContrato():
         print (time.perf_counter() - startVar, "Seconds")
         sys.exit()
     else:
-        #print("Faltan contratos")
         print("Asigno posiciones para un nuevo contrato")
     var1 = finalList[0]
     var2 = finalList[1]
@@ -198,9 +196,9 @@ def newContrato():
     print(finalList)
     main()
 
-##################################AQUI COMIENZA LA CLASE ORDENES OPERACIONES##########################################
+##################################AQUI COMIENZA LA CLASE ORDENES/OPERACIONES##########################################
 
-class OrdersApp(EWrapper, EClient):
+class OrdersExecute(EWrapper, EClient):
     def __init__(self):
         EClient.__init__(self, self)#Esto inicia conexion con los servidores de TWS IB
 
@@ -243,7 +241,6 @@ class OrdersApp(EWrapper, EClient):
         dictOper ['varcSym'] = contract.symbol #varcSym
         dictOper ['varcMer'] = contract.exchange ##Me muestra ordenes anteriores y la que corre actualmente
 
-
     def execDetails(self, reqId, contract, execution):
         print('executedDetails: ', reqId, contract.symbol, contract.secType, contract.currency, execution.execId, execution.orderId, execution.shares, execution.lastLiquidity, execution.price)
 
@@ -268,12 +265,11 @@ class OrdersApp(EWrapper, EClient):
     def stop(self):
         self.done = True
         self.disconnect()
-        #print("PASANDO POR STOP() Y REGRESA AL MAIN PARA REVISAR SI EXISTE OTRA ORDEN PARA EJECUTAR" + '\n')
-
+        
 ###############************METODO PARA INSTANCIAR LA CLASE ORDENES OPERACIONES***********################
 def main1():
     time.sleep(3)
-    app = OrdersApp()
+    app = OrdersExecute()
     app.nextorderId = 0
     app.connect("127.0.0.1", 7497, 0)
     time.sleep(3)
@@ -316,9 +312,7 @@ def newOrders():
     varoMax = myOrderList[5]#361.20
     varcSym = myOrderList[3]#"AAPL"
     varcMer = myOrderList[2]#"ISLAND" #Se tiene que usar ISLAND en ves de "NASDAQ"
-    #print("VOY A ELIMINAR DATOS DE LA ORDEN QUE FUE AGREGADA A LAS VARIABLES, POR LO TANTO LA SIGUIENTE LISTA TENDRA LAS ORDENES PENDIENTES")
     del myOrderList[0:6]
-    #print(myOrderList)
     main1()#Vuelvo a la funcion principal para instanciar la clase y desplegar un nueva orden
 
 def readOrdenes():
@@ -337,7 +331,6 @@ def readOrdenes():
         print("LISTA PREVIA: ")
         print(myOrderList)
     print("\n")
-    #print(len(myOrderList))
     varoOp = myOrderList[1]#"BUY"
     varoVoSo = myOrderList[4]#150
     varoMax = myOrderList[5]#361.20
@@ -500,7 +493,7 @@ def delFicheroOp (args):
                                                     (finalListAnul[2]),
                                                     (finalListAnul[3]),
                                                     int(finalListAnul[4]),
-                                                    float(finalListAnul[5])))#Momento en el que escribe en el archivo.txt
+                                                    float(finalListAnul[5])))#Momento en el que escribe en ordenes.txt
         del finalListAnul[0:6]
 
     print("\n")
@@ -513,8 +506,7 @@ def executeOrders(args):
     startVar = time.perf_counter()#Data con decimales
     readOrdenes()
     main1()
-    #sys.exit()
-
+   
 #########################################PARAMETROS DEL CODIGO | FUNCION ARGPARSE###########################################################
 
 parser = argparse.ArgumentParser(description = "PARAMETERS TO DEPLOY THE API IB")#Genero mi objeto
@@ -582,17 +574,14 @@ elif args.scmd == "ADD":
     var2 = myAddList[1]
     var3 = var1[0].upper()#Me pone en mayuscula #var3 y var4 seran los datos que se utilizaran en la otra funcion
     var4 = var2[0].upper()#Aqui ya tengo el elemento en un string de caracteres que se llevaran a una lista nueva
-    # print(var3)#var3 y var4 seran los datos que se utilizaran en la otra funcion
     addFichero(args)
 elif args.scmd == "DEL":
     myDelList.append(args.MARKET)
     myDelList.append(args.FINANCIAL_INSTRUMENT)
-    #print(myDelList)
     var1 = myDelList[0]
     var2 = myDelList[1]
     var3 = var1[0].upper()#Me pone en mayuscula
     var4 = var2[0].upper()#Aqui ya tengo el elemento en un string de caracteres que se llevaran a una lista nueva
-    #print("ELEMENTS TO DELETE: "+var3 +" "+ var4)#var3 y var4 seran los datos que se utilizaran en la otra funcion
     delFichero(args)
 elif args.scmd == "LISTOP":
     listOpFicheros(args)
@@ -608,14 +597,12 @@ elif args.scmd == "ADDOP":
         myTempList.append(word)#Uso una Lista Temporal
         varTemp = myTempList[-1]#Siempre el ultimo valor de la lista va para la variable varTemp
         varFin = varTemp[0].upper()#upper() Me pone en mayuscula el dato que paso de la lista#varTemp de cierta manera sigue siendo una lista
-        #print(varFin)#varFin solo captura el dato que esta dentro de la lista varTemp
         myAddOpList.append(varFin)
     print("Lista con los datos en Mayuscula: ")
     print(myAddOpList)#Lista con la orden a agregar a la lista
     addFicheroOp(args)
 elif args.scmd == "REMOVEOP":
     myDelList.append(args.ID) #print(myDelList[0])#Esto es lo mismo que print(args.ID)
-    #print(myDelList)
     var1 = myDelList[0]
     var3 = var1[0].upper()#Me pone en mayuscula
     print("ID to be deleted: ")
