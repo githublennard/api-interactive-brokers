@@ -65,7 +65,7 @@ Folder DATOS: Files ".txt" by Market and Stock.
 
 Este repositirio contiene toda la documentacion de la API de Interactive Brokers para el Desarrollo del Framework de Inversion Automatica.
 
-Este proyecto es referente al Trabajo Fin de Máster en la UC3M (Máster en Tecnologías del Sector Financiero) curso 2019-2020.
+Este proyecto es referente al Trabajo Fin de Máster en la UC3M (Máster en Tecnologías del Sector Financiero) Curso 2019-2020.
 
 ## Enlace Fotos Instrucciones:
 
