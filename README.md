@@ -3,7 +3,7 @@
 
 This repository will be for documentation about API Interactive Brokers in order to Develop Self-Acting Investment Framework.
 
-This project refers to the final master's project at UC3M (Master in Technologies in the Financial Sector).
+This project refers to the Final Master's Project at UC3M (Master in Technologies in the Financial Sector) Course 2019-2020.
 
 ## Link Pictures Instructions:
 
@@ -65,7 +65,7 @@ Folder DATOS: Files ".txt" by Market and Stock.
 
 Este repositirio contiene toda la documentacion de la API de Interactive Brokers para el Desarrollo del Framework de Inversion Automatica.
 
-Este proyecto es referente al trabajo fin de máster en la UC3M (Máster en Tecnologías del Sector Financiero).
+Este proyecto es referente al Trabajo Fin de Máster en la UC3M (Máster en Tecnologías del Sector Financiero) curso 2019-2020.
 
 ## Enlace Fotos Instrucciones:
 
