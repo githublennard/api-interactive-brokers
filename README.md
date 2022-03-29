@@ -1,5 +1,5 @@
 # English Version Instructions
-# apiIB
+# Api Interactive Brokers
 
 This repository will be for documentation about API Interactive Brokers in order to Develop Self-Acting Investment Framework.
 
@@ -61,7 +61,7 @@ Folder DATOS: Files ".txt" by Market and Stock.
 ```
 
 # Instrucciones Version en Español
-# apiIB
+# Api Interactive Brokers
 
 Este repositirio contiene toda la documentacion de la API de Interactive Brokers para el Desarrollo del Framework de Inversion Automatica.
 
